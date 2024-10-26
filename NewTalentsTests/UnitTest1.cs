@@ -4,12 +4,19 @@ namespace NewTalentsTests;
 
 public class UnitTest1
 {
+
+    public Calculadora construirClasse()
+    {
+        string data = "02/02/2022";
+        Calculadora c = new Calculadora("02/02/2022");
+    }
+
     [Theory]
     [InlineData(1,2,3)]
     [InlineData(4,5,9)]
     public void TestSomar(int val1, int val2, int resultado)
     {
-        Calculadora c = new Calculadora();
+        Calculadora c = construirClasse();
 
         int resultadoEsperado = c.somar(val1,val2);
 
@@ -23,7 +30,7 @@ public class UnitTest1
     [InlineData(9,5,4)]
     public void TesteSubtrair(int val1, int val2, int resultado)
     {
-        Calculadora c = new Calculadora();
+        Calculadora c = construirClasse();
 
         int resultadoEsperado = c.subtrair(val1,val2);
 
@@ -37,7 +44,7 @@ public class UnitTest1
     [InlineData(4,5,9)]
     public void TestMultiplicar(int val1, int val2, int resultado)
     {
-        Calculadora c = new Calculadora();
+        Calculadora c = construirClasse();
 
         int resultadoEsperado = c.multiplicar(val1,val2);
 
@@ -50,7 +57,7 @@ public class UnitTest1
     [InlineData(9,3,3)]
     public void TestDividir(int val1, int val2, int resultado)
     {
-        Calculadora c = new Calculadora();
+        Calculadora c = construirClasse();
 
         int resultadoEsperado = c.dividir(val1,val2);
 
@@ -63,7 +70,7 @@ public class UnitTest1
 
     public void TestarHistorico()
     {
-        Calculadora c = new Calculadora();
+        Calculadora c = construirClasse();
 
         c.somar(1,2);
         c.somar(2,8);
